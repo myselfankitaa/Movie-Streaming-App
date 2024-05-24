@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(53, 47, 47);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 20px 0 20px 50px;
+  padding: 20px 0 0 50px;
+}
+header p {
+  color: teal;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.main-page {
+  margin: 0;
+  padding: 0;
+}
+.inside-mainpage {
+  color: teal;
+  font-weight: bolder;
+}
+.nav ul {
+  display: flex;
+  margin-left: 50px;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  padding: 0 20px;
+  color: rgb(227, 238, 227);
+}
+.nav ul li a:hover {
+  color: teal;
+  font-weight: bolder;
+}
+.forUser {
+  cursor: pointer;
+  color: teal;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+.forUser a {
+  text-decoration: none;
+  color: white;
+  background-color: teal;
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+.forUser a:hover {
+  background-color: black;
+  color: hwb(180 0% 50%);
+  font-weight: bolder;
+}
+.forUser i {
+  font-size: 20px;
+  margin-right: 10px;
+  padding: 0 14px;
+}
+
+.accordion {
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+.active,
+.accordion:hover {
+  background-color: black;
+}
+.movie-details {
+  display: none;
+  margin-top: 10px;
+}
+.movie-container {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+.movie-container img {
+  display: block;
+  margin: 0 auto;
+}
+
+.movie-container button {
+  display: block;
+  margin: 10px auto 0;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.active + .movie-details {
+  display: block;
+}
+
+.comment-button {
+  color: teal;
+  font-weight: bold;
+}
+.star-rating {
+  margin-top: 10px;
+}
