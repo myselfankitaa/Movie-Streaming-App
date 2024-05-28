@@ -70,10 +70,13 @@ header p {
   text-align: left;
   outline: none;
   transition: 0.4s;
+  background-color: teal;
+  margin-top: 10px;
 }
 .active,
 .accordion:hover {
   background-color: black;
+  color: white;
 }
 .movie-details {
   display: none;
@@ -96,6 +99,10 @@ header p {
   padding: 10px 20px;
   cursor: pointer;
 }
+.movie-container img:hover {
+  transform: scale(1.2);
+}
+
 .active + .movie-details {
   display: block;
 }
