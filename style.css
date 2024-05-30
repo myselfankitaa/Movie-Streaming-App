@@ -7,10 +7,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin: 20px 0 20px 50px;
+  margin: 20px 0 20px 10px;
   padding: 20px 0 0 50px;
 }
-header p {
+section {
+  margin: 20px 0 20px 50px;
+}
+.site-name {
   color: teal;
   font-weight: bolder;
   font-size: xx-large;
@@ -26,6 +29,7 @@ header p {
 .nav ul {
   display: flex;
   margin-left: 50px;
+  margin-top: 40px;
 }
 
 .nav ul li {
@@ -42,6 +46,7 @@ header p {
   font-weight: bolder;
 }
 .forUser {
+  display: flex;
   cursor: pointer;
   color: teal;
   margin-top: 40px;
@@ -63,8 +68,26 @@ header p {
   font-size: 20px;
   margin-right: 10px;
   padding: 0 14px;
+  color: teal;
+}
+#shorting {
+  color: teal;
+  background-color: none;
+}
+#shorting:hover {
+  display: block;
 }
 
+#filters {
+  display: none;
+  position: absolute;
+  font-weight: normal;
+  font-size: 15px;
+  color: beige;
+}
+.filter:hover {
+  color: teal;
+}
 .accordion {
   cursor: pointer;
   text-align: left;
@@ -73,7 +96,7 @@ header p {
   background-color: teal;
   margin-top: 10px;
 }
-.active,
+
 .accordion:hover {
   background-color: black;
   color: white;
@@ -113,4 +136,30 @@ header p {
 }
 .star-rating {
   margin-top: 10px;
+}
+.logIn {
+  display: none;
+  margin: 0 auto;
+  position: absolute;
+}
+.logIn label input {
+  color: beige;
+  font-size: 10px;
+  margin: 5px;
+}
+.logIn button {
+  margin-top: 10px;
+  background-color: teal;
+}
+.logIn label {
+  font-size: 10px;
+}
+.logIn p {
+  font-size: 10px;
+}
+.signUp {
+  display: none;
+}
+#dropdown {
+  display: none;
 }
