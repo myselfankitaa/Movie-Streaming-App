@@ -122,7 +122,8 @@ section {
   padding: 10px 20px;
   cursor: pointer;
 }
-.movie-container img:hover {
+.movie-container img:hover,
+.movie-container button:hover {
   transform: scale(1.2);
 }
 
