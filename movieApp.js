@@ -24,6 +24,7 @@ function createMovieCard(movie) {
   starRating.className = "star-rating";
   const numberOfStars = 5;
   let stars = [];
+
   for (let x = 0; x < numberOfStars; x++) {
     const star = document.createElement("i");
     star.className = "rating__star far fa-star";
@@ -81,7 +82,7 @@ function createMovieCard(movie) {
     comments.className = "comments";
     const commentUl = document.createElement("ul");
 
-    commentButton.addEventListener("click", function () {
+    commentButton.addEventListener("click", () => {
       const commentUl = document.createElement("ul");
       if (commentInput.value) {
         const comment = document.createElement("li");
@@ -101,11 +102,6 @@ function createMovieCard(movie) {
   createCommentSection();
 
   readMoreBtn.addEventListener("click", function onclick() {
-    // location.href = "_blank";
-    // Create element to show details about the movie
-
-    /* Toggle between adding and removing the "active" class,
-     to highlight the button that controls the panel */
     this.classList.toggle("active");
     /* Toggle between hiding and showing the active panel */
     if (movieDetails.style.display === "block") {
@@ -119,30 +115,23 @@ function createMovieCard(movie) {
 
 function createMoviesPage() {
   nowStreaming.innerHTML = "";
-  for (let movie of movies) {
+  movies.forEach((movie) => {
     const movieElement = createMovieCard(movie);
     nowStreaming.appendChild(movieElement);
-  }
+  });
 }
 createMoviesPage();
 // JS 2
 const searchBtn = document.getElementById("search-icon");
-// function createSearch() {
-//   const inputField = document.createElement("input");
-//   inputField.id = "keyword-search";
-//   inputField.type = "search";
-//   inputField.placeholder = "search";
-//   inputField.required;
 
-//   search.appendChild(inputField);
 // function to search
 const inputField = document.getElementById("keyword-search");
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", () => {
   const inputStr = inputField.value.toLowerCase();
   nowStreaming.innerHTML = "";
   let found = false; // Flag to check if any movie is found
 
-  for (let movie of movies) {
+  movies.forEach((movie) => {
     if (
       movie.title.toLowerCase().includes(inputStr) ||
       movie.description.toLowerCase().includes(inputStr)
@@ -151,10 +140,10 @@ searchBtn.addEventListener("click", function () {
       const searchMovieElement = createMovieCard(movie);
       nowStreaming.appendChild(searchMovieElement);
     }
-  }
-  if (!found) {
-    nowStreaming.innerHTML = `<p>Not Found</p>`;
-  }
+    if (!found) {
+      nowStreaming.innerHTML = `<p>Not Found</p>`;
+    }
+  });
 });
 
 //
@@ -172,10 +161,10 @@ shorting.addEventListener("mouseover", function () {
 const newRelease = document.getElementById("newRelease");
 newRelease.addEventListener("click", function () {
   nowStreaming.innerHTML = "";
-  for (let movie of movies) {
+  movies.forEach((movie) => {
     if (movie.movie_year >= 2023) {
       const movieElement = createMovieCard(movie);
       nowStreaming.appendChild(movieElement);
     }
-  }
+  });
 });
