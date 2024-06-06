@@ -138,29 +138,55 @@ section {
 .star-rating {
   margin-top: 10px;
 }
-.logIn {
+#logIn {
   display: none;
   margin: 0 auto;
   position: absolute;
+  margin-right: 50px;
 }
-.logIn label input {
+.active + #logIn {
+  display: block;
+}
+#logIn label input {
   color: beige;
   font-size: 10px;
   margin: 5px;
 }
-.logIn button {
+#logIn button {
   margin-top: 10px;
   background-color: teal;
 }
-.logIn label {
+#logIn label {
   font-size: 10px;
 }
-.logIn p {
+#logIn p {
   font-size: 10px;
 }
-.signUp {
+#signUpPage {
   display: none;
+  width: 100%;
 }
+.active + #signUpPage {
+  display: block;
+}
+
 #dropdown {
   display: none;
+}
+#signUp,
+#signIn {
+  background-color: teal;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  background-color: teal;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+footer div,
+footer p {
+  background-color: teal;
 }
