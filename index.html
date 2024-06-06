@@ -67,8 +67,8 @@
           <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
         </span>
         <span>
-          <a href="">Login</a>
-          <fieldset class="logIn">
+          <div id="loginButton"><a href="">Login</a></div>
+          <fieldset id="logIn">
             <label
               ><input
                 type="email"
@@ -90,10 +90,10 @@
                 pattern
                 required /></label
             ><br />
-            <button>Log In</button>
+            <button id="signIn">Sign In</button>
             <p>If not registered! Please Sign up</p>
-            <button>Sign Up</button><br />
-            <div class="signUp">
+            <button id="signUp">Sign Up</button><br />
+            <div id="signUpPage">
               <label
                 >Enter Your First Name:
                 <input type="text" , id="firstName" , required
@@ -125,5 +125,16 @@
         </div>
       </div>
     </section>
+    <footer>
+      <div id="activeTime">
+        <p>Your active time:</p>
+        <div id="timer">00:00:00</div>
+        <!-- <button onclick="pause()">Pause</button> -->
+      </div>
+      <div id="countdownTimer">
+        <p>Countdown</p>
+        <div id="countdown">00:00</div>
+      </div>
+    </footer>
   </body>
 </html>
