@@ -101,15 +101,19 @@ function createMovieCard(movie) {
   }
   createCommentSection();
 
-  readMoreBtn.addEventListener("click", function onclick() {
-    this.classList.toggle("active");
-    /* Toggle between hiding and showing the active panel */
-    if (movieDetails.style.display === "block") {
-      movieDetails.style.display = "none";
-    } else {
-      movieDetails.style.display = "block";
+  function toggle() {
+    {
+      this.classList.toggle("active");
+      /* Toggle between hiding and showing the active panel */
+      if (movieDetails.style.display === "block") {
+        movieDetails.style.display = "none";
+      } else {
+        movieDetails.style.display = "block";
+      }
     }
-  });
+  }
+
+  readMoreBtn.addEventListener("click", toggle);
   return movieContainer;
 }
 
@@ -168,3 +172,78 @@ newRelease.addEventListener("click", function () {
     }
   });
 });
+
+const login = document.getElementById("loginButton");
+const loginPage = document.getElementById("logIn");
+
+login.addEventListener("mouseover", function onclick() {
+  this.classList.toggle("active");
+  /* Toggle between hiding and showing the active panel */
+  if (loginPage.style.display === "block") {
+    loginPage.style.display = "none";
+  } else {
+    loginPage.style.display = "block";
+  }
+});
+
+const signUp = document.getElementById("signUp");
+const signUpPage = document.getElementById("signUpPage");
+
+signUp.addEventListener("click", function onclick() {
+  this.classList.toggle("active");
+  /* Toggle between hiding and showing the active panel */
+  if (signUpPage.style.display === "block") {
+    signUpPage.style.display = "none";
+  } else {
+    signUpPage.style.display = "block";
+  }
+});
+// Creating screan Timer
+let timer;
+const htmlTimer = document.getElementById("timer");
+
+(function () {
+  let second = 0;
+  let minute = 0;
+  let hour = 0;
+
+  timer = setInterval(() => {
+    second++;
+    if (second === 60) {
+      second = 0;
+      minute++;
+    }
+    if (minute === 60) {
+      minute = 0;
+      hour++;
+    }
+
+    htmlTimer.innerHTML = `
+      ${hour < 10 ? "0" : ""}${hour} : 
+      ${minute < 10 ? "0" : ""}${minute} : 
+      ${second < 10 ? "0" : ""}${second}
+    `;
+  }, 1000);
+})();
+function pause() {
+  clearInterval(timer);
+}
+
+// Creating countdown
+const countdownEL = document.getElementById("countdown");
+const setTimeInMinute = 1;
+let time = 5;
+// setTimeInMinute * 60;
+setInterval(countdown, 1000);
+function countdown() {
+  time--;
+  const minute = Math.floor(time / 60);
+  let second = time % 60;
+  countdownEL.innerHTML = `${minute < 10 ? "0" : ""}${minute} : ${
+    second < 10 ? "0" : ""
+  }${second}`;
+  if (time <= 0) {
+    alert(`Time Out !!!`);
+    clearInterval(countdown);
+  }
+}
