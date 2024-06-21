@@ -15,11 +15,9 @@ function processMoviesData(movies) {
 
   function createMovieCard(movie) {
     //Create a container to store the Image and readMore Button
-
     const movieContainer = document.createElement("div");
     movieContainer.className = "movie-container";
 
-    //
     //  Create an img element and set its src attribute
     const img = document.createElement("img");
     img.width = 200;
@@ -45,7 +43,7 @@ function processMoviesData(movies) {
     const starClassActive = "rating__star fas fa-star";
     const starClassInactive = "rating__star far fa-star";
     stars.forEach((star, clickedStarIndex) => {
-      star.onclick = () => {
+      star.addEventListener("click", () => {
         stars.forEach((star, starIndex) => {
           if (starIndex <= clickedStarIndex) {
             star.className = starClassActive;
@@ -53,7 +51,7 @@ function processMoviesData(movies) {
             star.className = starClassInactive;
           }
         });
-      };
+      });
     });
 
     movieContainer.appendChild(img);
@@ -173,7 +171,6 @@ function processMoviesData(movies) {
     }
   });
 
-  //
   // creating toggling in filter/shorting option
   const shorting = document.getElementById("shorting");
   const filters = document.getElementById("filters");
@@ -201,7 +198,6 @@ function processMoviesData(movies) {
 
   login.addEventListener("mouseover", function onclick() {
     this.classList.toggle("active");
-    /* Toggle between hiding and showing the active panel */
     if (loginPage.style.display === "block") {
       loginPage.style.display = "none";
     } else {
@@ -214,7 +210,6 @@ function processMoviesData(movies) {
 
   signUp.addEventListener("click", function onclick() {
     this.classList.toggle("active");
-    /* Toggle between hiding and showing the active panel */
     if (signUpPage.style.display === "block") {
       signUpPage.style.display = "none";
     } else {
