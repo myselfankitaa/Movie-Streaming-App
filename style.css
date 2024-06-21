@@ -22,7 +22,7 @@ section {
   margin: 0;
   padding: 0;
 }
-.inside-mainpage {
+.streamingPage {
   color: teal;
   font-weight: bolder;
 }
@@ -94,7 +94,6 @@ section {
   outline: none;
   transition: 0.4s;
   background-color: teal;
-  margin-top: 10px;
 }
 
 .accordion:hover {
@@ -137,6 +136,9 @@ section {
 }
 .star-rating {
   margin-top: 10px;
+}
+.hidden {
+  display: none;
 }
 #logIn {
   display: none;
@@ -189,4 +191,7 @@ footer {
 footer div,
 footer p {
   background-color: teal;
+}
+#keyword-search {
+  color: white;
 }
