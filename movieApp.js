@@ -10,6 +10,7 @@ async function getMoviesData() {
     .catch((error) => (`ERROR !!!`, error))
     .finally(() => console.log(`Done`));
 }
+
 function processMoviesData(movies) {
   const nowStreaming = document.querySelector(".now-streaming");
 
@@ -44,13 +45,11 @@ function processMoviesData(movies) {
     const starClassInactive = "rating__star far fa-star";
     stars.forEach((star, clickedStarIndex) => {
       star.addEventListener("click", () => {
-        stars.forEach((star, starIndex) => {
-          if (starIndex <= clickedStarIndex) {
-            star.className = starClassActive;
-          } else {
-            star.className = starClassInactive;
-          }
-        });
+        stars.forEach((star, starIndex) =>
+          starIndex <= clickedStarIndex
+            ? (star.className = starClassActive)
+            : (star.className = starClassInactive)
+        );
       });
     });
 
