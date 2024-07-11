@@ -18,6 +18,7 @@ function processMoviesData(movies) {
     //Create a container to store movie details
     const movieDataContainer = document.createElement("div");
     movieDataContainer.className = "movieDataContainer";
+
     const movieContainer = document.createElement("div");
     movieContainer.className = "movie-container";
 
@@ -63,6 +64,7 @@ function processMoviesData(movies) {
     // Create element to show details about the movie
     const storeMovieDetail = document.createElement("div");
     storeMovieDetail.className = "storeMovieDetail";
+
     const movieDetails = document.createElement("div");
     movieDetails.className = "movie-details";
     movieDetails.style.display = "none";
@@ -74,6 +76,7 @@ function processMoviesData(movies) {
            <p><strong>Director:</strong> ${movie.director}</p>
            <p><strong>Actors:</strong> ${movie.actors.join(", ")}</p>
        `;
+
     storeMovieDetail.appendChild(movieDetails);
     movieDataContainer.appendChild(storeMovieDetail);
 
@@ -84,16 +87,20 @@ function processMoviesData(movies) {
       commentSection.innerHTML = "Comments: ";
       commentSection.style.fontWeight = "bold";
       commentSection.className = "comment-section";
+
       const commentInput = document.createElement("input");
       commentInput.type = "text";
       commentInput.value = "";
       commentInput.placeholder = "Add a Comment";
       commentInput.style.color = "white";
+
       const commentButton = document.createElement("button");
       commentButton.className = "comment-button";
       commentButton.innerHTML = "Submit";
+
       const comments = document.createElement("div");
       comments.className = "comments";
+
       const commentUl = document.createElement("ul");
 
       commentButton.addEventListener("click", () => {
@@ -102,7 +109,7 @@ function processMoviesData(movies) {
           comment.textContent = commentInput.value;
           commentUl.appendChild(comment);
           commentInput.value = "";
-          // const comments = JSON.parse(localStorage.getItems("comments"));
+          const comments = JSON.parse(localStorage.getItems("comments"));
           localStorage.setItem("comments", JSON.stringify(comment.textContent));
         }
       });
@@ -171,6 +178,7 @@ function processMoviesData(movies) {
         found = true;
         const searchMovieElement = createMovieCard(movie);
         nowStreaming.appendChild(searchMovieElement);
+        return;
       }
     });
     if (!found) {
@@ -183,11 +191,9 @@ function processMoviesData(movies) {
   const filters = document.getElementById("filters");
   shorting.addEventListener("mouseover", function () {
     this.classList.toggle("active");
-    if (filters.style.display === "block") {
-      filters.style.display = "none";
-    } else {
-      filters.style.display = "block";
-    }
+    filters.style.display === "block"
+      ? (filters.style.display = "none")
+      : (filters.style.display = "block");
   });
   const newRelease = document.getElementById("newRelease");
   newRelease.addEventListener("click", function () {
